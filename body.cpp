@@ -7,6 +7,12 @@ Body::Body()
     connect(this->timer, &QTimer::timeout, this, &Body::moveFoward);
     this->timer->start(50);
 }
+void Body::setprevious(Body * temp){
+    this->previous = temp;
+}
+void Body::setnext(Body * temp){
+    this->next = temp;
+}
 void Body::moveForward()
 {
     //rotate to previous node
@@ -21,9 +27,9 @@ void Body::moveForward()
     //let bodypart follow previous node
     setPos(previous->pos()-QPointF(dx,dy));
 }
-void Body::add_node(Body &body)
+void Body::add_node(Body *body)
 {   Body *temp = body;
-    while(temp->next!=null){
+    while(temp->next!=nullptr){
         temp=temp->next;
     }
     Body *t = new Body;

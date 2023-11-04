@@ -8,12 +8,7 @@ class Node: public QObject
     Q_OBJECT
 public:
     Node();
-    void setprevious(Node *);
-    void setnext(Node *);
-private:
-    Node * previous;
-    Node * next;
-    QTimer* timer;
+    QTimer *timer;
 };
 
 #endif // NODE_H

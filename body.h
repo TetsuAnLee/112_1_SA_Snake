@@ -11,9 +11,13 @@ public:
     Body();
     void operator=(const Body);
     int getlength();
-public slots:
     void moveForward();
-    void add_node(Body&);
+    void setprevious(Body *);
+    void setnext(Body *);
+    Body *previous;
+    Body *next;
+public slots:
+    void add_node(Body*);
 private:
     int length;
 };

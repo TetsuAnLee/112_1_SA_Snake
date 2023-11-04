@@ -15,13 +15,11 @@ void Player::move(){
     foreach (QGraphicsItem *item, colliding_items) {
         Food * food = dynamic_cast<Food*>(item);
         if (food) {
-            emit eating(this, food);
+            emit eating(food);
             scene()->removeItem(food);
-
             return;
         }
     }
-
     setPos(x()+5, y()+5);
 }
 void Player::add_body(Body * newBody){

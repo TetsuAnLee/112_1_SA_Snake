@@ -68,7 +68,7 @@ void Scene::spawnFood()
 void Scene::increaselong(Food *food){
     removeItem(food);
     delete(food);
-    tail->add_node(tail);
+    player->add_body(new Body());
     spawnFood();
 }
 ;

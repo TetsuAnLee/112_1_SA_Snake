@@ -17,19 +17,13 @@ public:
     void setpos(int,int);
     bool getGameOn() const;
     void setGameOn(bool newGameOn);
-
-
 private:
     bool gameOn;
     Player *player;
     QTimer *timer;
-    Body *tail;
-
-
 public slots:
     void spawnFood();
     void increaselong(Food *food);
-
 protected:
     void keyPressEvent(QKeyEvent *event);
     void mousePressEvent(QGraphicsSceneMouseEvent *event);

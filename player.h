@@ -5,7 +5,7 @@
 #include <QGraphicsPixmapItem>
 #include <QObject>
 
-class Player :public QGraphicsPixmapItem
+class Player :public QGraphicsPixmapItem,public QObject
 {
     Q_OBJECT
 public:
@@ -22,7 +22,7 @@ public slots:
     void move();
 
 signals:
-    void eating(Player *player, Food *food);
+    void eating(Food *food);
 private:
     Body *head;
     qreal m_rotation;

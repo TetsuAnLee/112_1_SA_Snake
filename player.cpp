@@ -6,9 +6,9 @@
 Player::Player()
 {
     setPixmap(QPixmap(":../Pacman.png"));
-    this->timer = new QTimer(this);
-    connect(this->timer, &QTimer::timeout, this, &Player::move);
-    this->timer->start(50);
+    timer = new QTimer(this);
+    connect(timer, &QTimer::timeout, this, &Player::move);
+    timer->start(50);
 }
 void Player::move(){
     QList<QGraphicsItem *> colliding_items = collidingItems();
@@ -23,4 +23,20 @@ void Player::move(){
     }
 
     setPos(x()+5, y()+5);
+}
+void Player::add_body(Body * newBody){
+    Body *now = newBody;
+    if(now==nullptr){
+        head = newBody;
+    }
+    else{
+        while(now->getnext()!=nullptr){
+            now = now->getnext();
+        }
+        now->setnext(newBody);
+
+    }
+}
+QPointF* Player::getpos(){
+    return new QPointF(pos());
 }

@@ -14,11 +14,12 @@ public:
     void moveForward();
     void setprevious(Body *);
     void setnext(Body *);
-    Body *previous;
-    Body *next;
+    Body* getnext();
 public slots:
     void add_node(Body*);
 private:
+    Body *previous;
+    Body *next;
     int length;
 };
 

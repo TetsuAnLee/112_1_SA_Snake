@@ -3,9 +3,6 @@
 Body::Body()
 {
     length = 1;
-    this->timer = new QTimer(this);
-    connect(this->timer, &QTimer::timeout, this, &Body::moveFoward);
-    this->timer->start(50);
 }
 void Body::setprevious(Body * temp){
     this->previous = temp;
@@ -26,6 +23,9 @@ void Body::moveForward()
     double dy = STEP_SIZE * qSin(theata);
     //let bodypart follow previous node
     setPos(previous->pos()-QPointF(dx,dy));
+}
+Body* Body::getnext(){
+    return next;
 }
 void Body::add_node(Body *body)
 {   Body *temp = body;

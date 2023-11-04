@@ -1,11 +1,11 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 #include "food.h"
-#include "node.h"
+#include "body.h"
 #include <QGraphicsPixmapItem>
-#include <QPropertyAnimation>
+#include <QObject>
 
-class Player : public Node ,public QGraphicsPixmapItem
+class Player :public QGraphicsPixmapItem
 {
     Q_OBJECT
 public:
@@ -16,24 +16,17 @@ public:
     qreal rotation() const;
     void setRotation(qreal newRotation);
     void rotateTo(qreal end, const int duration, const QEasingCurve curve);
-    void setpos(int,int);
-    qreal y() const;
-    void setY(qreal newY);
-    qreal x() const;
-    void setX(qreal newX);
-
+    void add_body(Body*);
+    QPointF* getpos();
 public slots:
     void move();
 
 signals:
     void eating(Player *player, Food *food);
 private:
+    Body *head;
     qreal m_rotation;
-    qreal m_y;
-    qreal m_x;
-    QPropertyAnimation *rotationAnimation;
-    QPropertyAnimation *yAnimation;
-    QPropertyAnimation *xAnimation;
+    QTimer *timer;
 };
 
 #endif // PLAYER_H

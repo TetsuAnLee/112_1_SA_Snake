@@ -12,15 +12,15 @@ Scene::Scene(QObject *parent): QGraphicsScene(parent)
 {
     player = new Player();
     connect(player,&Player::eating,this,&Scene::increaselong);
-    player->setpos(50,50);
+    player->setPos(50,50);
     addItem(player);
-    tail= new Body();
-    player->setnext(tail);
-    tail->setprevious(player);
-    tail->setPos(player->pos());
-    addItem(tail);
-    while(tail->getlength()<5){
-        tail->add_node(tail);
+    Body *head= new Body();
+    head->setPos(player->pos());
+    player->add_body(head);
+    //tail->setprevious(player);
+    addItem(head);
+    while(head->getlength()<5){
+        head->add_node(new Body());
     }
 
 }

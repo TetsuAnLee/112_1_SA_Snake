@@ -5,6 +5,7 @@
 
 class Body :public Node
 {
+    Q_OBJECT
 public:
     Body();
     void operator=(const Body);

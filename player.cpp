@@ -9,6 +9,9 @@ Player::Player()
     connect(timer, &QTimer::timeout, this, &Player::move);
     timer->start(50);
 }
+Player::~Player(){
+
+}
 void Player::move(){
     QList<QGraphicsItem *> colliding_items = collidingItems();
     foreach (QGraphicsItem *item, colliding_items) {

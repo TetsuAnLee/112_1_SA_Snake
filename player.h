@@ -6,22 +6,17 @@
 #include <QObject>
 #include <QWidget>
 
-class Player :public QGraphicsPixmapItem,public QObject
+class Player :public QObject,public QGraphicsPixmapItem
 {
     Q_OBJECT
 public:
     explicit Player(QPixmap pixmap);
     explicit Player();
     ~Player();
-
-    qreal rotation() const;
-    void setRotation(qreal newRotation);
-    void rotateTo(qreal end, const int duration, const QEasingCurve curve);
     void add_body(Body*);
     QPointF* getpos();
 public slots:
     void move();
-
 signals:
     void eating(Food *food);
 private:

@@ -2,6 +2,7 @@
 #include <QTimer>
 Body::Body()
 {
+    setPixmap(QPixmap(":../Pacman.png"));
     length = 1;
 }
 void Body::setprevious(Body * temp){

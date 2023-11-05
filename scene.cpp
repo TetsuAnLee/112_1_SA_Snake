@@ -1,14 +1,14 @@
 #include "scene.h"
 #include "food.h"
 #include "body.h"
+#include "player.h"
 
 #include <QDebug>
-#include <QGraphicsRectItem>
 #include <QKeyEvent>
 #include <QMouseEvent>
 #include <QGraphicsSceneMouseEvent>
 
-Scene::Scene(QObject *parent): QGraphicsScene(parent)
+Scene::Scene(QObject *parent)
 {
     player = new Player();
     connect(player,&Player::eating,this,&Scene::increaselong);
@@ -23,6 +23,9 @@ Scene::Scene(QObject *parent): QGraphicsScene(parent)
         head->add_node(new Body());
     }
 
+}
+Scene::~Scene(){
+    delete player;
 }
 
 void Scene::keyPressEvent(QKeyEvent *event)

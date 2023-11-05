@@ -3,8 +3,9 @@
 #include <QPointF>
 #include <QObject>
 #include <QWidget>
+#include <QGraphicsPixmapItem>
 
-class Node: public QObject
+class Node:public QObject,public QGraphicsPixmapItem
 {
     Q_OBJECT
 public:

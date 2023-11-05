@@ -1,12 +1,10 @@
 #ifndef BODY_H
 #define BODY_H
 #include "node.h"
-#include <QGraphicsPixmapItem>
 #include <QWidget>
 
-class Body :public Node, public QGraphicsPixmapItem
+class Body :public Node
 {
-    Q_OBJECT
 public:
     Body();
     void operator=(const Body);

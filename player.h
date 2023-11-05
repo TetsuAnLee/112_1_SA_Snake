@@ -4,6 +4,7 @@
 #include "body.h"
 #include <QGraphicsPixmapItem>
 #include <QObject>
+#include <QWidget>
 
 class Player :public QGraphicsPixmapItem,public QObject
 {

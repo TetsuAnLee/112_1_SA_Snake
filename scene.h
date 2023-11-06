@@ -1,9 +1,6 @@
 #ifndef SCENE_H
 #define SCENE_H
 
-#include "food.h"
-#include "player.h"
-#include "body.h"
 #include <QGraphicsScene>
 #include <QTimer>
 
@@ -19,14 +16,6 @@ public:
     void setGameOn(bool newGameOn);
 private:
     bool gameOn;
-    Player *player;
-    QTimer *timer;
-public slots:
-    void spawnFood();
-    void increaselong(Food *food);
-protected:
-    void keyPressEvent(QKeyEvent *event);
-    void mousePressEvent(QGraphicsSceneMouseEvent *event);
 };
 
 #endif // SCENE_H

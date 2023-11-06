@@ -17,6 +17,8 @@ public:
 private:
     bool gameOn;
     Body *body;
+protected:
+    void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
 };
 
 #endif // SCENE_H

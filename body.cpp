@@ -3,5 +3,7 @@
 #include <QGraphicsPixmapItem>
 Body::Body()
 {
-    setPixmap(QPixmap(":/images/Pacman.png"));
+    QPixmap pixmap(":/images/Pacman.png");
+    pixmap = pixmap.scaled(50, 50); // 设置图像大小为50x50
+    setPixmap(pixmap);
 }

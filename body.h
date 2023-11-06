@@ -9,6 +9,8 @@ class Body:public QObject, public QGraphicsPixmapItem
     Q_OBJECT
 public:
     Body();
+private:
+    int rotation = 45;
 };
 
 #endif // BODY_H

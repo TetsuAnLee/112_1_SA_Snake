@@ -1,6 +1,6 @@
 #ifndef SCENE_H
 #define SCENE_H
-
+#include "body.h"
 #include <QGraphicsScene>
 #include <QTimer>
 
@@ -16,6 +16,7 @@ public:
     void setGameOn(bool newGameOn);
 private:
     bool gameOn;
+    Body *body;
 };
 
 #endif // SCENE_H

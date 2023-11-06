@@ -2,9 +2,11 @@
 #define BODY_H
 
 #include <QObject>
+#include <QGraphicsPixmapItem>
 
-class Body
+class Body:public QObject, public QGraphicsPixmapItem
 {
+    Q_OBJECT
 public:
     Body();
 };

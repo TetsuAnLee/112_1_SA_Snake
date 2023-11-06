@@ -11,13 +11,11 @@ CONFIG += c++17
 SOURCES += \
     body.cpp \
     main.cpp \
-    node.cpp \
     scene.cpp \
     widget.cpp
 
 HEADERS += \
     body.h \
-    node.h \
     scene.h \
     widget.h
 

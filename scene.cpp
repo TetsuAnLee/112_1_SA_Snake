@@ -8,7 +8,7 @@
 #include <QMouseEvent>
 #include <QGraphicsSceneMouseEvent>
 
-Scene::Scene(QObject *parent)
+Scene::Scene(QObject *parent): QGraphicsScene(parent)
 {
     player = new Player();
     connect(player,&Player::eating,this,&Scene::increaselong);

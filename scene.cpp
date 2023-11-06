@@ -2,8 +2,6 @@
 #include "food.h"
 #include "body.h"
 #include "player.h"
-
-#include <QDebug>
 #include <QKeyEvent>
 #include <QMouseEvent>
 #include <QGraphicsSceneMouseEvent>

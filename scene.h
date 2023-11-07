@@ -1,7 +1,6 @@
 #ifndef SCENE_H
 #define SCENE_H
 #include "body.h"
-#include "node.h"
 #include <QGraphicsScene>
 #include <QTimer>
 #include <QList>
@@ -16,10 +15,13 @@ public:
     bool getGameOn() const;
     void setGameOn(bool newGameOn);
     void AddLength();
+public slots:
+    void forward();
 private:
     bool gameOn;
     QList<Body*> head;
     Body *body;
+    QTimer timer;
 protected:
     void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
 };

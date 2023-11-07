@@ -1,6 +1,7 @@
 #ifndef SCENE_H
 #define SCENE_H
 #include "body.h"
+#include "food.h"
 #include <QGraphicsScene>
 #include <QTimer>
 #include <QList>
@@ -22,8 +23,10 @@ private:
     QList<Body*> head;
     Body *body;
     QTimer timer;
+    Food *test;
 protected:
     void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
+    void keyPressEvent(QKeyEvent *event)override;
 };
 
 #endif // SCENE_H

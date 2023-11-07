@@ -13,6 +13,7 @@ public:
     Body(QPointF,int);
     int getRotation();
     QPointF getPos();
+    void setangle(int);
 private:
     int rotation = 0;
 };

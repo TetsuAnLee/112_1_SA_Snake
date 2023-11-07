@@ -17,6 +17,10 @@ Body::Body(QPointF pos,int _rotation){
 int Body::getRotation(){
     return this->rotation;
 }
+void Body::setangle(int _rotation){
+    this->rotation = _rotation;
+    setRotation(rotation);
+}
 QPointF Body::getPos(){
     return this->pos();
 }

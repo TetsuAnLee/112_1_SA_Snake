@@ -16,6 +16,7 @@ public:
     bool getGameOn() const;
     void setGameOn(bool newGameOn);
     void AddLength();
+    void collidesWithItem();
 public slots:
     void forward();
 private:
@@ -23,7 +24,7 @@ private:
     QList<Body*> head;
     Body *body;
     QTimer timer;
-    Food *test;
+    Food * food;
 protected:
     void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
     void keyPressEvent(QKeyEvent *event)override;

@@ -13,10 +13,9 @@ Scene::Scene(QObject *parent): QGraphicsScene(parent)
     body->setPos(200,300);
     addItem(body);
     */
-    test = new Food();
-    test->setPos(20,20);
-    addItem(test);
-
+    food = new Food();
+    food->setPos(20,20);
+    addItem(food);
     AddLength();
     AddLength();
     AddLength();
@@ -85,5 +84,14 @@ void Scene::forward() {
     head[0]->setangle(prev_angle);
     for (int i = 0; i<head.size(); i++)
         qDebug() << "Head " << i << " Position: " << head[i]->getRotation();  // 打印更新后的位置
+    collidesWithItem();
+}
+void Scene::collidesWithItem() {
+    if (head[0]->collidesWithItem(food)) {
+        removeItem(food);
+        food = new Food();
+        addItem(food);
+        AddLength();
+    }
 }
 
